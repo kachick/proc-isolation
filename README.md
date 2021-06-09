@@ -1,4 +1,4 @@
-# my_new_library
+# proc-isolation
 
 Ruby library template for [@kachick](https://github.com/kachick), To make easy to create own gem that having prepared environment
 
@@ -6,10 +6,10 @@ The motivation is [written in Japanese](https://github.com/kachick/times_kachick
 
 ---
 
-![logo](https://raw.githubusercontent.com/kachick/my_new_library/main/logo.png)
+![logo](https://raw.githubusercontent.com/kachick/proc-isolation/main/logo.png)
 
-![Build Status](https://github.com/kachick/my_new_library/actions/workflows/test_behaviors.yml/badge.svg?branch=main)
-[![Gem Version](https://badge.fury.io/rb/my_new_library.png)](http://badge.fury.io/rb/my_new_library)
+![Build Status](https://github.com/kachick/proc-isolation/actions/workflows/test_behaviors.yml/badge.svg?branch=main)
+[![Gem Version](https://badge.fury.io/rb/proc-isolation.png)](http://badge.fury.io/rb/proc-isolation)
 
 Summary
 
@@ -20,19 +20,19 @@ Require Ruby 2.6 or later
 Add below code into your Gemfile
 
 ```ruby
-gem 'my_new_library', '>= 0.0.1', '< 0.1.0'
+gem 'proc-isolation', '>= 0.0.1', '< 0.1.0'
 ```
 
 ### Overview
 
 ```ruby
-MyNewLibrary.example(42)
+Proc::Isolation.example(42)
 ```
 
 ## Links
 
-* [Repository](https://github.com/kachick/my_new_library)
-* [API documents](https://kachick.github.io/my_new_library/)
+* [Repository](https://github.com/kachick/proc-isolation)
+* [API documents](https://kachick.github.io/proc-isolation/)
 
 ## Note
 

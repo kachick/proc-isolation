@@ -26,3 +26,8 @@
 *.lock
 
 .DS_Store
+
+## For C extention
+*.o
+*.bundle
+Makefile

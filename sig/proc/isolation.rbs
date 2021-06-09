@@ -1,0 +1,7 @@
+class Proc
+  module Isolation
+    VERSION: String
+  end
+
+  def isolate: -> void
+end

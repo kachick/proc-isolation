@@ -1,29 +1,29 @@
 # coding: us-ascii
 # frozen_string_literal: true
 
-lib_name = 'my_new_library'
+lib_name = 'proc-isolation'
 
-require_relative './lib/my_new_library/version'
+require_relative './lib/proc/isolation/version'
 repository_url = "https://github.com/kachick/#{lib_name}"
 
 Gem::Specification.new do |gem|
-  gem.summary       = %q{my_new_library}
+  gem.summary       = %q{proc-isolation}
   gem.description   = <<-'DESCRIPTION'
-    my_new_library
+    proc-isolation
   DESCRIPTION
   gem.homepage      = repository_url
   gem.license       = 'MIT'
   gem.name          = lib_name
-  gem.version       = MyNewLibrary::VERSION
+  gem.version       = Proc::Isolation::VERSION
 
   gem.metadata = {
-    'documentation_uri' => 'https://kachick.github.io/my_new_library/',
+    'documentation_uri' => 'https://kachick.github.io/proc-isolation/',
     'homepage_uri'      => repository_url,
     'source_code_uri'   => repository_url,
     'bug_tracker_uri'   => "#{repository_url}/issues"
   }
 
-  gem.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
+  gem.required_ruby_version = Gem::Requirement.new('>= 3.0.0')
 
   # common
 
@@ -31,7 +31,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['kachick1+ruby@gmail.com']
   git_managed_files = `git ls-files`.lines.map(&:chomp)
   might_be_parsing_by_tool_as_dependabot = git_managed_files.empty?
-  base_files = Dir['README*', '*LICENSE*',  'lib/**/*', 'sig/**/*'].uniq
+  base_files = Dir['README*', '*LICENSE*',  'lib/**/*', 'ext/**/*', 'Makefile', 'sig/**/*'].uniq
   files = might_be_parsing_by_tool_as_dependabot ? base_files : (base_files & git_managed_files)
 
   unless might_be_parsing_by_tool_as_dependabot

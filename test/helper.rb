@@ -19,20 +19,4 @@ Warning.process do |_warning|
   :raise
 end
 
-require_relative '../lib/my_new_library'
-
-class Test::Unit::TestCase
-  module MyNewLibraryHelpers
-    def awesome_helper
-      nil
-    end
-  end
-
-  module MyNewLibraryAssertions
-    def assert_awesome(object)
-      assert do
-        'foo'.instance_of?(String)
-      end
-    end
-  end
-end
+require_relative '../lib/proc/isolation'

@@ -11,8 +11,8 @@ Welcome all of the contributions!
 At first, you should install development dependencies
 
 ```console
-$ git clone git@github.com:kachick/my_new_library.git
-$ cd ./my_new_library
+$ git clone git@github.com:kachick/proc-isolation.git
+$ cd ./proc-isolation
 $ ./bin/setup
 Dependencies are installed!
 ```
