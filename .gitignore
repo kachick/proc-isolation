@@ -30,4 +30,5 @@
 ## For C extention
 *.o
 *.bundle
+*.bak
 Makefile

@@ -2,4 +2,6 @@
 # frozen_string_literal: true
 
 require 'mkmf'
-create_makefile('proc-isolation')
+
+# ref: https://docs.ruby-lang.org/ja/latest/method/Kernel/i/create_makefile.html
+create_makefile('isolation', 'ext')

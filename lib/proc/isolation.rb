@@ -8,5 +8,5 @@
 
 require_relative 'isolation/version'
 # require_relative '../isolation.so'
-require_relative '../../proc-isolation.o'
+require_relative '../../isolation.o'
 
