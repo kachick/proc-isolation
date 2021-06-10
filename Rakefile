@@ -19,7 +19,7 @@ end
 
 task default: [:test_behaviors]
 
-task test_behaviors: [:test, :spec]
+task test_behaviors: [:test]
 
 desc 'Simulate CI results in local machine as possible'
 multitask simulate_ci: [:test_behaviors, :validate_signatures, :rubocop]

@@ -347,8 +347,7 @@ Style/KeywordParametersOrder:
   Enabled: false
 
 Style/Lambda:
-  Enabled: true
-  EnforcedStyle: 'literal'
+  Enabled: false
 
 Style/LambdaCall:
   Enabled: false
@@ -373,7 +372,7 @@ Style/MethodCallWithArgsParentheses:
     - 'example/**/*'
 
 Style/MethodCallWithoutArgsParentheses:
-  Enabled: true
+  Enabled: false
 
 Style/MethodCalledOnDoEndBlock:
   Enabled: false
@@ -810,6 +809,8 @@ Layout/CaseIndentation:
 Naming/MethodName:
   Enabled: true
   EnforcedStyle: 'snake_case'
+  Exclude:
+    - 'test/**/*'
 
 Naming/FileName:
   Enabled: true
@@ -910,10 +911,15 @@ Lint/ConstantResolution:
 Lint/EmptyInPattern:
   Enabled: true
 
+Lint/Void:
+  Enabled: false
+
 Rubycw/Rubycw:
   Enabled: true
   Include:
     - '**/*.rb'
+    - '**/*.c'
+    - '**/*.h'
     - 'Rakefile'
     - 'Steepfile'
     - 'bin/**/*'
