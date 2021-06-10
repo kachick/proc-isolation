@@ -2,6 +2,7 @@
 #include "ruby/ruby.h"
 
 VALUE rb_proc_isolate(VALUE);
+VALUE rb_proc_isolate_bang(VALUE);
 // typedef struct rb_proc_t;
 
 // #define GetCoreDataFromValue(obj, type, ptr) ((ptr) = CoreDataFromValue((obj), type))
@@ -42,5 +43,6 @@ void
 Init_proc_isolation(void)
 {
   rb_define_method(rb_cProc, "isolate", rb_proc_isolate, 0);
+  rb_define_method(rb_cProc, "isolate!", rb_proc_isolate_bang, 0);
   // rb_define_method(rb_cProc, "isolated?", rb_proc_isolated_p, 0);
 }

@@ -7,12 +7,12 @@ gemspec
 
 group :development, :test do
   gem 'rake', '>= 13.0.3', '< 20.0'
+  gem 'rake-compiler', '~> 1.1.1'
   gem 'irb', '>= 1.3.5', '< 2.0'
   gem 'irb-power_assert', '0.0.2'
 end
 
 group :development do
-  gem 'rake-compiler'
   gem 'rbs', '>= 1.2.1', '< 2.0', require: false
   gem 'steep', '>= 0.44.1', '< 0.50.0', require: false
   gem 'yard', '>= 0.9.26', '< 2', require: false

@@ -18,6 +18,42 @@ class TestProcIsolation < Test::Unit::TestCase
     end
   end
 
+  def test_proc_isolate!
+    prc = proc { 42 }
+    assert_instance_of(Proc, prc.isolate!)
+    assert_same(prc, prc.isolate!)
+    assert do
+      !prc.isolate!.lambda?
+    end
+    assert_equal(42, prc.isolate!.call)
+
+    foo = 42
+    prc = proc { foo }
+
+    assert_raise_with_message(ArgumentError, /can not isolate a Proc because it accesses outer variables/) do
+      prc.isolate!
+    end
+    assert_equal(42, prc.call)
+  end
+
+  def test_lambda_isolate!
+    lmd = -> { 42 }
+    assert_instance_of(Proc, lmd.isolate!)
+    assert_same(lmd, lmd.isolate!)
+    assert do
+      lmd.isolate!.lambda?
+    end
+    assert_equal(42, lmd.isolate!.call)
+
+    foo = 42
+    lmd = -> { foo }
+
+    assert_raise_with_message(ArgumentError, /can not isolate a Proc because it accesses outer variables/) do
+      lmd.isolate!
+    end
+    assert_equal(42, lmd.call)
+  end
+
   def test_proc_isolate
     prc = proc { 42 }
     assert_instance_of(Proc, prc.isolate)
