@@ -36,6 +36,14 @@ class TestProcIsolation < Test::Unit::TestCase
     assert_equal(42, prc.call)
   end
 
+  def test_proc_isolate_bang_as_an_unbound_method
+    unbound = Proc.instance_method(:isolate!)
+
+    assert_raise_with_message(TypeError, /bind argument must be an instance of Proc/) do
+      unbound.bind(Object.new)
+    end
+  end
+
   def test_lambda_isolate!
     lmd = -> { 42 }
     assert_instance_of(Proc, lmd.isolate!)
@@ -68,6 +76,14 @@ class TestProcIsolation < Test::Unit::TestCase
 
     assert_raise_with_message(ArgumentError, /can not isolate a Proc because it accesses outer variables/) do
       prc.isolate
+    end
+  end
+
+  def test_proc_isolate_as_an_unbound_method
+    unbound = Proc.instance_method(:isolate)
+
+    assert_raise_with_message(TypeError, /bind argument must be an instance of Proc/) do
+      unbound.bind(Object.new)
     end
   end
 
