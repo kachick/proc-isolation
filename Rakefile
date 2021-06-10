@@ -2,8 +2,10 @@
 
 require 'bundler/gem_tasks'
 
+require 'rake/extensiontask'
+require 'rake/clean'
+
 require 'rake/testtask'
-require 'rspec/core/rake_task'
 
 begin
   require 'rubocop/rake_task'
@@ -23,10 +25,6 @@ multitask simulate_ci: [:test_behaviors, :validate_signatures, :rubocop]
 Rake::TestTask.new(:test) do |tt|
   tt.pattern = 'test/**/test_*.rb'
   tt.warning = true
-end
-
-RSpec::Core::RakeTask.new(:spec) do |rt|
-  rt.ruby_opts = %w[-w]
 end
 
 desc 'Signature check, it means `rbs` and `YARD` syntax correctness'
@@ -54,13 +52,6 @@ task :yard do
   sh 'bundle exec yard --fail-on-warning'
 end
 
-FileList['benchmark/*.rb'].each do |path|
-  desc "Rough benchmark for #{File.basename(path)}"
-  task path do
-    ruby path
-  end
-end
-
 desc 'Prevent miss packaging!'
 task :view_packaging_files do
   sh 'rm -rf ./pkg'
@@ -70,4 +61,15 @@ task :view_packaging_files do
     sh 'tree -I *\.gem'
   end
   sh 'rm -rf ./pkg'
+end
+
+CLEAN.include(
+  "tmp",
+  "proc_isolation.o"
+)
+
+GEMSPEC = Gem::Specification.load('proc-isolation')
+
+Rake::ExtensionTask.new("proc-isolation_ext", GEMSPEC) do |ext|
+  ext.ext_dir = 'ext'
 end

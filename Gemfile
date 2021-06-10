@@ -12,6 +12,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rake-compiler'
   gem 'rbs', '>= 1.2.1', '< 2.0', require: false
   gem 'steep', '>= 0.44.1', '< 0.50.0', require: false
   gem 'yard', '>= 0.9.26', '< 2', require: false
