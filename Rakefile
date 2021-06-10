@@ -19,7 +19,7 @@ end
 
 task default: [:test_behaviors]
 
-task test_behaviors: [:test]
+task test_behaviors: [:compile, :test]
 
 desc 'Simulate CI results in local machine as possible'
 multitask simulate_ci: [:test_behaviors, :validate_signatures, :rubocop]
@@ -35,7 +35,7 @@ multitask validate_signatures: [:'signature:validate_yard', :'signature:validate
 namespace :signature do
   desc 'Validate `rbs` syntax, this should be passed'
   task :validate_rbs do
-    sh 'bundle exec rbs -rsecurerandom -rmonitor -I sig validate'
+    sh 'bundle exec rbs -I sig validate'
   end
 
   desc 'Check `rbs` definition with `steep`, but it faults from some reasons ref: #26'

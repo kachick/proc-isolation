@@ -1,0 +1,4 @@
+class Proc
+  def isolate: -> Proc
+  def isolate!: -> Proc
+end
