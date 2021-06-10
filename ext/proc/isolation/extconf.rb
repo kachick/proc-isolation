@@ -4,4 +4,4 @@
 require 'mkmf'
 
 # ref: https://docs.ruby-lang.org/ja/latest/method/Kernel/i/create_makefile.html
-create_makefile('isolation', 'ext')
+create_makefile('proc-isolation')

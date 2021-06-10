@@ -2,8 +2,10 @@
 
 require 'bundler/gem_tasks'
 
-require 'rake/extensiontask'
 require 'rake/clean'
+
+require 'rake/extensiontask'
+require 'rubygems/package_task'
 
 require 'rake/testtask'
 
@@ -68,8 +70,11 @@ CLEAN.include(
   "proc_isolation.o"
 )
 
-GEMSPEC = Gem::Specification.load('proc-isolation')
+gemspec = Gem::Specification.load('proc-isolation.gemspec')
 
-Rake::ExtensionTask.new("proc-isolation_ext", GEMSPEC) do |ext|
-  ext.ext_dir = 'ext'
+Gem::PackageTask.new(gemspec) do |pkg|
+end
+
+Rake::ExtensionTask.new('proc-isolation', gemspec) do |ext|
+  ext.ext_dir = 'ext/proc/isolation'
 end

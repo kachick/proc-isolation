@@ -29,6 +29,7 @@
 
 ## For C extention
 *.o
+*.so
 *.bundle
 *.bak
 Makefile
