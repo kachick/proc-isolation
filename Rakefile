@@ -66,8 +66,8 @@ task :view_packaging_files do
 end
 
 CLEAN.include(
-  "tmp",
-  "proc_isolation.o"
+  'tmp',
+  'proc_isolation.o'
 )
 
 gemspec = Gem::Specification.load('proc-isolation.gemspec')
@@ -75,6 +75,6 @@ gemspec = Gem::Specification.load('proc-isolation.gemspec')
 Gem::PackageTask.new(gemspec) do |pkg|
 end
 
-Rake::ExtensionTask.new('proc-isolation', gemspec) do |ext|
-  ext.ext_dir = 'ext/proc/isolation'
+Rake::ExtensionTask.new('proc_isolation', gemspec) do |ext|
+  # ext.ext_dir = 'ext/proc/isolation'
 end

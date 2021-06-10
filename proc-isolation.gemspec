@@ -41,6 +41,6 @@ Gem::Specification.new do |gem|
   end
 
   gem.files         = files
-  gem.extensions = Dir['ext/**/extconf.rb']
+  gem.extensions = Dir['ext/proc_isolation/extconf.rb']
   gem.require_paths = ['lib']
 end

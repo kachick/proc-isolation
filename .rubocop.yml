@@ -5,13 +5,12 @@ require:
   - rubocop-md
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
   DisplayCopNames: true
   Exclude:
     - '**/vendor/**/*'
     - 'pkg/**/*'
   NewCops: enable
-  SuggestExtensions: false
 
 Metrics:
   Enabled: false
