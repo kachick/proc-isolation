@@ -4,5 +4,5 @@
 # Copyright (C) 2021 Kenichi Kamiya
 
 unless ->{}.respond_to?(:isolate)
-  require_relative '../proc_isolation'
+  require_relative 'isolation.so'
 end

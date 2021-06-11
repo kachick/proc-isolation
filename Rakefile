@@ -19,7 +19,7 @@ end
 
 task default: [:test_behaviors]
 
-task test_behaviors: [:compile, :test]
+task test_behaviors: [:clobber, :compile, :test]
 
 desc 'Simulate CI results in local machine as possible'
 multitask simulate_ci: [:test_behaviors, :validate_signatures, :rubocop]
@@ -67,7 +67,7 @@ end
 
 CLEAN.include(
   'tmp',
-  'proc_isolation.o'
+  # 'proc_isolation.o'
 )
 
 gemspec = Gem::Specification.load('proc-isolation.gemspec')
@@ -75,6 +75,7 @@ gemspec = Gem::Specification.load('proc-isolation.gemspec')
 Gem::PackageTask.new(gemspec) do |pkg|
 end
 
-Rake::ExtensionTask.new('proc_isolation', gemspec) do |ext|
-  # ext.ext_dir = 'ext/proc/isolation'
+Rake::ExtensionTask.new('proc/isolation', gemspec) do |ext|
+  ext.ext_dir = 'ext/proc'
+  ext.lib_dir = 'lib'
 end
