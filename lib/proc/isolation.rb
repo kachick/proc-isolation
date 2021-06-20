@@ -5,4 +5,5 @@
 
 unless -> {}.respond_to?(:isolate)
   require_relative '../proc_isolation'
+  require_relative 'isolation/version'
 end
