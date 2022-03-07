@@ -13,7 +13,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rbs', '>= 1.2.1', '< 2.0', require: false
+  gem 'rbs', '>= 1.2.1', '< 3.0', require: false
   gem 'steep', '>= 0.44.1', '< 0.50.0', require: false
   gem 'yard', '>= 0.9.26', '< 2', require: false
   gem 'rubocop', '>= 1.17.0', '< 1.23.0', require: false
