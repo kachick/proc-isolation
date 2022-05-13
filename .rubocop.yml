@@ -10,6 +10,7 @@ AllCops:
   Exclude:
     - '**/vendor/**/*'
     - 'pkg/**/*'
+    - 'tmp/**/*'
   NewCops: enable
 
 Metrics:
