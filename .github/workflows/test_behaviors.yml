@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - '.github/workflows/test_behaviors.yml'
       - 'lib/**'
       - 'ext/**'
       - 'test/**'
@@ -15,6 +16,7 @@ on:
       - 'Rakefile'
   pull_request:
     paths:
+      - '.github/workflows/test_behaviors.yml'
       - 'lib/**'
       - 'ext/**'
       - 'test/**'
