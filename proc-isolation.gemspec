@@ -18,10 +18,11 @@ Gem::Specification.new do |gem|
   gem.version       = Proc::Isolation::VERSION
 
   gem.metadata = {
-    'documentation_uri' => 'https://kachick.github.io/proc-isolation/',
-    'homepage_uri'      => repository_url,
-    'source_code_uri'   => repository_url,
-    'bug_tracker_uri'   => "#{repository_url}/issues"
+    'documentation_uri    ' => 'https://kachick.github.io/proc-isolation/',
+    'homepage_uri'          => repository_url,
+    'source_code_uri'       => repository_url,
+    'bug_tracker_uri'       => "#{repository_url}/issues",
+    'rubygems_mfa_required' => 'true'
   }
 
   gem.required_ruby_version = Gem::Requirement.new('>= 3.0.0')
