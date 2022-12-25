@@ -9,7 +9,7 @@ group :development, :test do
   gem 'rake', '~> 13.0.6'
   gem 'rake-compiler', '~> 1.2.1'
   gem 'irb', '~> 1.6.2'
-  gem 'irb-power_assert', '0.0.3'
+  gem 'irb-power_assert', '0.1.1'
 end
 
 group :development do
