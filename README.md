@@ -6,7 +6,7 @@ Do not use in your production code, stop to use just only fun in your sandbox. :
 ---
 
 ![Build Status](https://github.com/kachick/proc-isolation/actions/workflows/test_behaviors.yml/badge.svg?branch=main)
-[![Gem Version](https://badge.fury.io/rb/proc-isolation.png)](http://badge.fury.io/rb/proc-isolation)
+[![Gem Version](https://badge.fury.io/rb/proc-isolation.svg)](http://badge.fury.io/rb/proc-isolation)
 
 ## Usage
 
